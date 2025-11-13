@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fale Conosco | Agência de Viagens</title>
+  <style>
+    body{
+        font-family: Arial, sans-serif;
+        background: url('/Céu.png')no-repeat center center fixed;
+        background-size: cover;
+        box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4);
+        margin: 0%;
+        padding-bottom: 0px;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.397);
+      color: rgb(202, 132, 86);
+      text-align: center;
+      padding: 5px;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      background-color: rgba(0, 0, 0, 0.794);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: rgb(202, 132, 86);
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: rgb(138, 110, 160);
+      text-shadow: rgb(75, 34, 62) 0.1em 0.1em 0.2em;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    label {
+      font-weight: bold;
+      color: rgb(101, 56, 138);
+    }
+
+    input, textarea {
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid rgb(119, 115, 115);
+      font-size: 15px;
+      resize: none;
+    }
+
+    button {
+      background-color: rgb(66, 39, 20);
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: rgb(138, 81, 43);
+      
+    }
+
+    .info-contato {
+      text-align: center;
+      margin-top: 40px;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    .info-contato a {
+      color: #d83939;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .info-contato a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.794);
+      color: white;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 25px;
+      }
+    }
+
+    .direitos{
+        text-align: center;
+        color: rgba(255, 255, 255, 0.356);
+        padding-top: 20px;
+        font-size: 13px;
+        background-color: rgba(0, 0, 0, 0.397);
+        text-align: center;
+        padding-bottom:10px;
+      
+    p{
+        color: rgba(255, 255, 255, 0.356);
+        padding: 5px;
+        padding-top: 20px;
+        padding-left: 10%;
+        padding-right: 10%;
+        
+    }
+    }
+
+    .voltar {
+      display: inline-block;
+      margin-top: 15px;
+      text-decoration: none;
+      color: rgb(99, 99, 99);
+      font-weight: bold;
+    }
+
+    .voltar:hover {
+      text-decoration: underline;
+    }
+
+    
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Fale Conosco</h1>
+  </header>
+
+  <main>
+    <h2>Entre em contato com nossa equipe</h2>
+    <p>Tem alguma dúvida, sugestão ou precisa de ajuda com sua reserva? Envie-nos uma mensagem!</p>
+
+    <form onsubmit="return enviarFormulario()">
+      <label for="nome">Nome completo:</label>
+      <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" placeholder="exemplo@email.com" required>
+
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" name="mensagem" rows="5" placeholder="Digite sua mensagem" required></textarea>
+
+      <button type="submit">Enviar Mensagem</button>
+    </form>
+
+    <div class="info-contato">
+      <p>📞 Telefone: <strong>(83) 98610-2526</strong></p>
+      <p>✉️ E-mail: <a href="mailto: pereiraycaro3@gmail.com">MKUJourney@gmail.com</a></p>
+      <p>📍 Endereço: Trabalhamos apenas remotamente até o momento!</p>
+    </div>
+     <a href="MKU.html" class="voltar">← Voltar à página inicial</a>
+  </main>
+
+  <script>
+    function enviarFormulario() {
+      const nome = document.getElementById('nome').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const mensagem = document.getElementById('mensagem').value.trim();
+
+      if (nome && email && mensagem) {
+        alert("Mensagem enviada com sucesso! Entraremos em contato em breve.");
+        window.location.href = "index.html"; // Redireciona para a página inicial
+        return false; // Impede envio real (para não recarregar a página)
+      } else {
+        alert("Por favor, preencha todos os campos antes de enviar.");
+        return false;
+      }
+    }
+  
+  </script>
+
+  <div class="direitos">
+        <p>
+            © 2025 MKUJourney. Direitos reservados. | Por Icaro Pereira Neiva.
+        </p>
+
+</div>
+
+</body>
+</html>
